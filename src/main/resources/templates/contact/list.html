@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact List</title>
+</head>
+<body>
+<h1>Contact List</h1>
+<a th:href="@{/contacts/new}">Add New Contact</a>
+<form th:action="@{/contacts/search}" method="get">
+    <input type="text" name="query" placeholder="Search by name">
+    <button type="submit">Search</button>
+</form>
+<ul>
+    <li th:each="contact : ${contacts}">
+        <span th:text="${contact.name}">Name</span> - <span th:text="${contact.phone}">Phone</span>
+        <a th:href="@{/contacts/edit/{id}(id=${contact.id})}">Edit</a>
+        <a th:href="@{/contacts/delete/{id}(id=${contact.id})}">Delete</a>
+    </li>
+</ul>
+<a th:href="@{/}">Back to Home</a>
+</body>
+</html>
