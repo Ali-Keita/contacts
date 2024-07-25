@@ -1,9 +1,10 @@
+
 package ml.aliou.contact.service;
 
 
 
 
-import ml.aliou.contact.exception.ContactNotFoundException;
+//import ml.aliou.contact.exception.ContactNotFoundException;
 import ml.aliou.contact.model.Contact;
 import ml.aliou.contact.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,10 @@ import java.util.Optional;
             return contactRepository.findAll();
         }
 
-        public Contact findById(Long id) {
-            return contactRepository.findById(id).orElseThrow(() -> new ContactNotFoundException(id));
-        }
+
+        //   public Contact findById(Long id) {
+        //      return contactRepository.findById(id).orElseThrow(() -> new ContactNotFoundException(id));}
+
 
         public Contact save(Contact contact) {
             return contactRepository.save(contact);
@@ -40,6 +42,11 @@ import java.util.Optional;
 
         public List<Contact> searchByPhone(String phone) {
             return contactRepository.findByPhoneContaining(phone);
+        }
+
+        public Contact findById(Long id) {
+
+            return null;
         }
     }
 

@@ -1,3 +1,4 @@
+
 package ml.aliou.contact.controller;
 
 
@@ -38,12 +39,12 @@ public class ContactController {
         return "redirect:/contacts";
     }
 
-    @GetMapping("/edit/{id}")
-    public String showEditForm(@PathVariable Long id, Model model) {
-        Contact contact = contactService.findById(id);
-        model.addAttribute("contact", contact);
-        return "contact/form";
-    }
+//    @GetMapping("/edit/{id}")
+//    public String showEditForm(@PathVariable Long id, Model) {
+//        Contact = contactService.findById(id);
+//        model.addAttribute("contact", contact);
+//        return "contact/form";
+//    }
 
     @GetMapping("/delete/{id}")
     public String deleteContact(@PathVariable Long id) {
@@ -58,4 +59,5 @@ public class ContactController {
         return "contact/list";
     }
 }
+
 
